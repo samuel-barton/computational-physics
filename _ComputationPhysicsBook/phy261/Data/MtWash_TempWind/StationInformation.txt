@@ -1,0 +1,4 @@
+USAF-WBAN_ID STATION NAME                   COUNTRY                                            STATE 			      LATITUDE LONGITUDE ELEVATION
+------------ ------------------------------ -------------------------------------------------- ------------------------------ -------- --------- ---------
+726130 14755 MOUNT WASHINGTON               UNITED STATES                                      NEW HAMPSHIRE                   +44.267  -071.300   +1910.2
+726130 99999 MOUNT WASHINGTON               UNITED STATES                                      NEW HAMPSHIRE                   +44.267  -071.300   +1910.0

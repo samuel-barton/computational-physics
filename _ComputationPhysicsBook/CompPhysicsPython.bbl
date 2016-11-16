@@ -1,0 +1,61 @@
+\begin{thebibliography}{10}
+
+\bibitem{chonacky}
+Norman Chonacky.
+\newblock Has computing changed physics courses?
+\newblock {\em Computing in Science and Engineering}, pages 4--5,
+  September/October 2006.
+
+\bibitem{landau-cise}
+Rubin Landau.
+\newblock Computational physics: A better model for physics education?
+\newblock {\em Computing in Science and Engineering}, pages 22--30,
+  September/October 2006.
+
+\bibitem{landau-firstcourse}
+Rubin~H. Landau.
+\newblock {\em A First Course in Scientific Computing}.
+\newblock Princeton University Press, 2005.
+
+\bibitem{landau-computationalphysics}
+Rubin~H. Landau and Manuel~Jose P\'{a}ez.
+\newblock {\em Computational Physics: Problem Solving with Computers}.
+\newblock Wiley, 1997.
+
+\bibitem{oliphant-cise}
+Travis~E. Oliphant.
+\newblock Python for scientific computing.
+\newblock {\em Computing in Science and Engineering}, pages 10--20, May/June
+  2007.
+
+\bibitem{perez}
+Fernando Perez and Brian~E. Granger.
+\newblock Ipython: A system for interactive scientific computing.
+\newblock {\em Computing in Science and Engineering}, pages 21--29, May/June
+  2007.
+
+\bibitem{chun2007}
+Wesley~J. Chun.
+\newblock {\em Core Python Programming}.
+\newblock Prentice Hall, 2nd edition, 2007.
+
+\bibitem{guido-introduction}
+Guido van Rossum.
+\newblock {\em An Introduction to Python}.
+\newblock Network Theory LTD, November 2006.
+
+\bibitem{zelle}
+John Zelle.
+\newblock {\em Python Programming: An Introduction to Computer Science}.
+\newblock Franklin, Beedle \& Associates, 2004.
+
+\bibitem{langtangen-3ed}
+Hans~Petter Langtangen.
+\newblock {\em Python Scripting for Computational Science}.
+\newblock Springer, 3 edition, 2008.
+
+\bibitem{Baamann:2002}
+Katharina Baamann, Cornelius Ejimofor, Alan Michaels, and Alec Muller.
+\newblock Viscous flow around metal spheres, December 2002.
+
+\end{thebibliography}

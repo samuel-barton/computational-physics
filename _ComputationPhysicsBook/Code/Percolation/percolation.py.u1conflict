@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+Percolation.py
+
+Created by Paul Nakroshis on 2011-10-26.
+This code by Paul Andrew Nakroshis is licensed under
+a Creative Commons Attribution-NonCommercial-ShareAlike
+3.0 Unported License.
+"""
+import matplotlib.pylab as plt
+import matplotlib as mlab
+import numpy as np
+forestColors = mlab.colors.ListedColormap(('white', 'green', 'red', 'black'))
+N = 100
+probOfTree = 0.1
+forest = np.zeros((N, N))
+for i in range(N):
+    for j in range(N):
+        p = np.random.rand()
+        if p <= probOfTree:   # site has tree if p < probOfTree
+            forest[i, j] = 0.30  # color of grid site set to green
+        else:
+            forest[i, j] = 0.0   # unoccupied sites are white
+
+plt.pcolor(forest, cmap=forestColors, vmin=0.0, vmax=1.0)
+plt.colorbar()
+plt.show()

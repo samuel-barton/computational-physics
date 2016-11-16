@@ -1,0 +1,201 @@
+%% This BibTeX bibliography file was created using BibDesk.
+%% http://bibdesk.sourceforge.net/
+
+
+%% Created for Paul Nakroshis at 2013-02-01 21:29:19 -0500 
+
+
+%% Saved with string encoding Unicode (UTF-8) 
+
+
+
+@webpage{Baamann:2002,
+	Abstract = {In this project, we analyzed the dynamic viscosity of chemical-grade glycerin by measuring the terminal velocity of metallic spheres of varying diameters dropped in a graduated cylinder. A mathematical analysis using non-dimensionalization of Stokes fluid flow was then compared to the data to determine the accuracy of the approximation and receive an ultimate estimation for the viscosity of the glycerin.
+
+},
+	Annote = {http://www.ace.gatech.edu/experiments2/6514/flowaround/fall02/ma6514/Image21.gif},
+	Author = {Katharina Baamann and Cornelius Ejimofor and Alan Michaels and Alec Muller},
+	Date-Added = {2007-09-22 23:46:39 -0400},
+	Date-Modified = {2013-02-01 15:00:30 +0000},
+	Keywords = {Glycerin, Flow, Sphere, Drag,},
+	Lastchecked = {February 1, 2013},
+	Month = {December},
+	Title = {Viscous Flow around Metal Spheres},
+	Url = {http://www.ace.gatech.edu/experiments2/6514/flowaround/fall02/ma6514/ma6514.html},
+	Urldate = {December 7, 2002},
+	Year = {2002},
+	Bdsk-Url-1 = {http://www.ace.gatech.edu/experiments2/6514/flowaround/fall02/ma6514/ma6514.html}}
+
+@article{Goff:2004,
+	Author = {John Eric Goff},
+	Date-Added = {2007-08-12 14:50:27 -0400},
+	Date-Modified = {2013-02-01 14:56:32 +0000},
+	Journal = {Physics Education},
+	Keywords = {Air Drag, Air Resistance, Drag, Physics Education, Model},
+	Local-Url = {file://localhost/Volumes/Daiju_1Tb/pauln/Dropbox/2013_Sabbatical/_ComputationPhysicsBook/References/pdf_sources/HeuristicModelAirDragSpere.pdf},
+	Month = {November},
+	Number = {6},
+	Pages = {496-499},
+	Publisher = {Physics Education},
+	Title = {Heuristic model of air drag on a sphere},
+	Url = {http://goff-j.web.lynchburg.edu/Goff_PED_11_04.pdf},
+	Volume = {39},
+	Year = {2004},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUIJidUJHRvcFgkb2JqZWN0c1gkdmVyc2lvblkkYXJjaGl2ZXLRBgdUcm9vdIABqAkKFRYXGyIjVSRudWxs0wsMDQ4RElpOUy5vYmplY3RzViRjbGFzc1dOUy5rZXlzog8QgASABoAHohMUgAKAA1lhbGlhc0RhdGFccmVsYXRpdmVQYXRo0hgMGRpXTlMuZGF0YU8RAkQAAAAAAkQAAgAACURhaWp1XzFUYgAAAAAAAAAAAAAAAAAAAAAAAMomN6BIKwAAACRPfR5IZXVyaXN0aWNNb2RlbEFpckRyYWdTcGVyZS5wZGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJE+bzTE/zAAAAAAAAAAAAAEAAwAACQAAAAAAAAAAAAAAAAAAAAALcGRmX3NvdXJjZXMAABAACAAAyiZv4AAAABEACAAAzTGGHAAAAAEAGAAkT30AIF+tACBegwAfhVkAAB30AAAAWAACAHtEYWlqdV8xVGI6cGF1bG46AERyb3Bib3g6ADIwMTNfU2FiYmF0aWNhbDoAX0NvbXB1dGF0aW9uUGh5c2ljc0Jvb2s6AFJlZmVyZW5jZXM6AHBkZl9zb3VyY2VzOgBIZXVyaXN0aWNNb2RlbEFpckRyYWdTcGVyZS5wZGYAAA4APgAeAEgAZQB1AHIAaQBzAHQAaQBjAE0AbwBkAGUAbABBAGkAcgBEAHIAYQBnAFMAcABlAHIAZQAuAHAAZABmAA8AFAAJAEQAYQBpAGoAdQBfADEAVABiABIAbC9wYXVsbi9Ecm9wYm94LzIwMTNfU2FiYmF0aWNhbC9fQ29tcHV0YXRpb25QaHlzaWNzQm9vay9SZWZlcmVuY2VzL3BkZl9zb3VyY2VzL0hldXJpc3RpY01vZGVsQWlyRHJhZ1NwZXJlLnBkZgATABIvVm9sdW1lcy9EYWlqdV8xVGIAFQACABj//wAAgAXSHB0eH1gkY2xhc3Nlc1okY2xhc3NuYW1lox8gIV1OU011dGFibGVEYXRhVk5TRGF0YVhOU09iamVjdF8QKnBkZl9zb3VyY2VzL0hldXJpc3RpY01vZGVsQWlyRHJhZ1NwZXJlLnBkZtIcHSQloiUhXE5TRGljdGlvbmFyeRIAAYagXxAPTlNLZXllZEFyY2hpdmVyAAgAEQAWAB8AKAAyADUAOgA8AEUASwBSAF0AZABsAG8AcQBzAHUAeAB6AHwAhgCTAJgAoALoAuoC7wL4AwMDBwMVAxwDJQNSA1cDWgNnA2wAAAAAAAACAQAAAAAAAAAoAAAAAAAAAAAAAAAAAAADfg==}}
+
+@book{giordano,
+	Author = {Nicholas J. Giordano and Hisao Nakanishi},
+	Date-Added = {2007-08-08 14:32:40 -0400},
+	Date-Modified = {2007-08-08 14:34:55 -0400},
+	Edition = {Second},
+	Keywords = {Introduction, Computing, C, Fortran, Textbook},
+	Publisher = {Pearson},
+	Title = {Computational Physics},
+	Year = {2006}}
+
+@book{gould,
+	Author = {Harvey Gould and Jan Tobochnik and Wolfgang Christian},
+	Date-Added = {2007-08-08 14:30:27 -0400},
+	Date-Modified = {2007-08-08 14:32:26 -0400},
+	Edition = {Third},
+	Keywords = {Computing, Java, Introduction, Textbook, Advanced},
+	Publisher = {Pearson},
+	Title = {An Introduction to Computer Simulation Methods},
+	Year = {2007}}
+
+@book{garcia,
+	Author = {Alejandro L. Garcia},
+	Date-Added = {2007-08-08 14:27:52 -0400},
+	Date-Modified = {2007-08-08 14:30:14 -0400},
+	Edition = {Second},
+	Keywords = {Textbook, C++, Matlab, Advanced, Computing},
+	Publisher = {Prentice Hall},
+	Title = {Numerical Methods for Physics},
+	Year = {2000}}
+
+@book{klein,
+	Author = {Andi Klein and Alexander Godunov},
+	Date-Added = {2007-08-08 14:24:55 -0400},
+	Date-Modified = {2007-08-08 14:27:45 -0400},
+	Keywords = {Textbook, C++, C, Computing, Introduction},
+	Publisher = {Cambridge University Press},
+	Title = {Introductory Computational Physics},
+	Year = {2006}}
+
+@book{landau-computationalphysics,
+	Author = {Rubin H. Landau and Manuel Jose P\'{a}ez},
+	Date-Added = {2007-08-08 09:52:43 -0400},
+	Date-Modified = {2007-08-08 09:55:47 -0400},
+	Keywords = {Textbook, Computing, Introduction, Fortran, C},
+	Publisher = {Wiley},
+	Title = {Computational Physics: Problem Solving with Computers},
+	Year = {1997}}
+
+@book{landau-firstcourse,
+	Author = {Rubin H. Landau},
+	Date-Added = {2007-08-08 09:49:52 -0400},
+	Date-Modified = {2007-08-08 09:52:20 -0400},
+	Keywords = {Computing, Introduction, Pedagogy, Textbook},
+	Publisher = {Princeton University Press},
+	Title = {A First Course in Scientific Computing},
+	Year = {2005}}
+
+@article{perez,
+	Author = {Fernando Perez and Brian E. Granger},
+	Date-Added = {2007-08-08 09:44:40 -0400},
+	Date-Modified = {2007-08-08 09:48:22 -0400},
+	Journal = {Computing in Science and Engineering},
+	Keywords = {Computing, Python, Introduction, IPython},
+	Month = {May/June},
+	Pages = {21-29},
+	Title = {IPython: A System for Interactive Scientific Computing},
+	Year = {2007}}
+
+@article{oliphant-cise,
+	Author = {Travis E. Oliphant},
+	Date-Added = {2007-08-08 09:41:23 -0400},
+	Date-Modified = {2007-08-08 09:43:39 -0400},
+	Journal = {Computing in Science and Engineering},
+	Keywords = {Python, Computing, Introduction},
+	Month = {May/June},
+	Pages = {10-20},
+	Title = {Python for Scientific Computing},
+	Year = {2007}}
+
+@article{taylor-cise,
+	Author = {Jamie R. Taylor and B. Alex King III},
+	Date-Added = {2007-08-08 09:20:54 -0400},
+	Date-Modified = {2007-08-08 09:40:55 -0400},
+	Journal = {Computing in Science and Engineering},
+	Keywords = {Pedagogy, Computing},
+	Month = {September/October},
+	Pages = {38-43},
+	Title = {Using Computational Methods to Reinvigorate an Undergraduate Physics Curriculum},
+	Year = {2006}}
+
+@article{landau-cise,
+	Author = {Rubin Landau},
+	Date-Added = {2007-08-08 09:15:25 -0400},
+	Date-Modified = {2007-08-08 09:41:07 -0400},
+	Journal = {Computing in Science and Engineering},
+	Keywords = {Opinion, Pedagogy, Computing},
+	Month = {September/October},
+	Pages = {22-30},
+	Title = {Computational Physics: A Better Model for Physics Education?},
+	Year = {2006}}
+
+@article{chonacky,
+	Author = {Norman Chonacky},
+	Date-Added = {2007-08-08 09:11:38 -0400},
+	Date-Modified = {2007-08-08 09:15:24 -0400},
+	Journal = {Computing in Science and Engineering},
+	Keywords = {Computing, Pedagogy, Opinion},
+	Month = {September/October},
+	Pages = {4-5},
+	Title = {Has Computing Changed Physics Courses?},
+	Year = {2006}}
+
+@book{chun2007,
+	Author = {Wesley J. Chun},
+	Date-Added = {2007-08-07 23:30:45 -0400},
+	Date-Modified = {2007-08-07 23:33:02 -0400},
+	Edition = {2nd},
+	Keywords = {Introduction, Python, Recommended, Reference},
+	Publisher = {Prentice Hall},
+	Title = {Core Python Programming},
+	Year = {2007}}
+
+@book{zelle,
+	Author = {John Zelle},
+	Date-Added = {2007-08-07 23:27:22 -0400},
+	Date-Modified = {2007-08-07 23:30:38 -0400},
+	Keywords = {Introduction, Python, Reference},
+	Publisher = {Franklin, Beedle \& Associates},
+	Title = {Python Programming: An Introduction to Computer Science},
+	Year = {2004}}
+
+@book{langtangen-3ed,
+	Author = {Hans Petter Langtangen},
+	Date-Added = {2007-08-07 23:21:39 -0400},
+	Date-Modified = {2013-02-01 16:05:16 +0000},
+	Edition = {3},
+	Editor = {Timothy J. Barth},
+	Keywords = {Python, Introduction, Reference, Recommended, Advanced},
+	Publisher = {Springer},
+	Title = {Python Scripting for Computational Science},
+	Year = {2008}}
+
+@book{guido-introduction,
+	Author = {Guido van Rossum},
+	Date-Added = {2007-08-07 23:12:42 -0400},
+	Date-Modified = {2013-02-01 14:53:46 +0000},
+	Editor = {Fred L. Drake, Jr.},
+	Keywords = {Python, Introduction, Guido, Reference, Recommended},
+	Local-Url = {file://localhost/Volumes/Daiju_1Tb/pauln/Dropbox/2013_Sabbatical/_ComputationPhysicsBook/References/pdf_sources/IntroToPython.pdf},
+	Month = {November},
+	Publisher = {Network Theory LTD},
+	Title = {An Introduction to Python},
+	Url = {http://www.network-theory.co.uk/docs/pytut/},
+	Year = {2006},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUIJidUJHRvcFgkb2JqZWN0c1gkdmVyc2lvblkkYXJjaGl2ZXLRBgdUcm9vdIABqAkKFRYXGyIjVSRudWxs0wsMDQ4RElpOUy5vYmplY3RzViRjbGFzc1dOUy5rZXlzog8QgASABoAHohMUgAKAA1lhbGlhc0RhdGFccmVsYXRpdmVQYXRo0hgMGRpXTlMuZGF0YU8RAhAAAAAAAhAAAgAACURhaWp1XzFUYgAAAAAAAAAAAAAAAAAAAAAAAMomN6BIKwAAACRPfRFJbnRyb1RvUHl0aG9uLnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJE/Hwd5GggAAAAAAAAAAAAEAAwAACQAAAAAAAAAAAAAAAAAAAAALcGRmX3NvdXJjZXMAABAACAAAyiZv4AAAABEACAAAwd6M0gAAAAEAGAAkT30AIF+tACBegwAfhVkAAB30AAAAWAACAG5EYWlqdV8xVGI6cGF1bG46AERyb3Bib3g6ADIwMTNfU2FiYmF0aWNhbDoAX0NvbXB1dGF0aW9uUGh5c2ljc0Jvb2s6AFJlZmVyZW5jZXM6AHBkZl9zb3VyY2VzOgBJbnRyb1RvUHl0aG9uLnBkZgAOACQAEQBJAG4AdAByAG8AVABvAFAAeQB0AGgAbwBuAC4AcABkAGYADwAUAAkARABhAGkAagB1AF8AMQBUAGIAEgBfL3BhdWxuL0Ryb3Bib3gvMjAxM19TYWJiYXRpY2FsL19Db21wdXRhdGlvblBoeXNpY3NCb29rL1JlZmVyZW5jZXMvcGRmX3NvdXJjZXMvSW50cm9Ub1B5dGhvbi5wZGYAABMAEi9Wb2x1bWVzL0RhaWp1XzFUYgAVAAIAGP//AACABdIcHR4fWCRjbGFzc2VzWiRjbGFzc25hbWWjHyAhXU5TTXV0YWJsZURhdGFWTlNEYXRhWE5TT2JqZWN0XxAdcGRmX3NvdXJjZXMvSW50cm9Ub1B5dGhvbi5wZGbSHB0kJaIlIVxOU0RpY3Rpb25hcnkSAAGGoF8QD05TS2V5ZWRBcmNoaXZlcgAIABEAFgAfACgAMgA1ADoAPABFAEsAUgBdAGQAbABvAHEAcwB1AHgAegB8AIYAkwCYAKACtAK2ArsCxALPAtMC4QLoAvEDEQMWAxkDJgMrAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAz0=},
+	Bdsk-Url-1 = {http://www.network-theory.co.uk/docs/pytut/}}

@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: CompPhysicsPython.aux
+A level-1 auxiliary file: Preface/pref.aux
+A level-1 auxiliary file: Chapters/introToLatex/introLatex.aux
+A level-1 auxiliary file: Chapters/simplePlots/simplePlots.aux
+A level-1 auxiliary file: Chapters/extractingData/extractingData.aux
+A level-1 auxiliary file: Chapters/4BasicPython/BasicPython.aux
+A level-1 auxiliary file: Chapters/5Kinematics/Kinematics.aux
+A level-1 auxiliary file: Chapters/6SimpleHarmonicMotion/SimpleHarmonicMotion.aux
+A level-1 auxiliary file: appendices/guidelinesForReports/guidelines.aux
+A level-1 auxiliary file: appendices/digitalSubmission/submission.aux
+A level-1 auxiliary file: appendices/guidelinesForProgramming/programmingGuidelines.aux
+A level-1 auxiliary file: References/reference.aux
+The style file: unsrt.bst
+Database file #1: References/Computational.bib.bib
+Warning--entry type for "Baamann:2002" isn't style-file defined
+--line 12 of file References/Computational.bib.bib
+Warning--can't use both author and editor fields in guido-introduction
+Warning--can't use both author and editor fields in langtangen-3ed
+You've used 11 entries,
+            1791 wiz_defined-function locations,
+            513 strings with 5109 characters,
+and the built_in function-call counts, 2156 in all, are:
+= -- 190
+> -- 62
+< -- 4
++ -- 27
+- -- 16
+* -- 96
+:= -- 324
+add.period$ -- 32
+call.type$ -- 11
+change.case$ -- 7
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 127
+empty$ -- 234
+format.name$ -- 16
+if$ -- 517
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 16
+newline$ -- 57
+num.names$ -- 11
+pop$ -- 57
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 62
+stack$ -- 0
+substring$ -- 72
+swap$ -- 39
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 19
+width$ -- 13
+write$ -- 116
+(There were 3 warnings)

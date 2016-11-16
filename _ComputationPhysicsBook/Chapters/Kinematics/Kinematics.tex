@@ -1,0 +1,445 @@
+%%%%%%%%%%%%%%%%%%%% chapter2.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\chapter{Kinematics in One and Two Dimensions}
+\label{ch-kinematics} % Always give a unique label
+In almost all introductory physics courses, we begin with kinematics in one and two dimensions. We will begin our study of computational physics similarly, as we can easily check our code in the limiting case of no air resistance and constant vertical acceleration. We will also explore realms that are generally not discussed: motion with linear and non-linear air resistance, and motion with non-constant vertical acceleration. 
+\section{Motion in one dimension: Linear Air Resistance}
+\label{sec-1d}
+Consider the simplest case of a ball \textit{dropped from rest} from close to the surface of Earth. Assuming that the ball is sufficiently dense, so that we can ignore buoyancy, the main forces on the ball during its downward flight are gravitation and air resistance. If we choose positive y upward, and y=0 at the ground, then Newton's second law tells us that 
+$$ - F_g + F_d = - m a_y ,$$
+where $F_g$ and $F_d$ are the magnitudes of the gravitational force and the drag force, respectively, and $a_y$ is the \textit{magnitude} of the acceleration of the ball. The free-body diagram is shown in  Figure~\ref{fig-FreeFall}. 
+\begin{figure}
+\centering
+\sidecaption
+\includegraphics[width=4cm]{Figures/Kinematics/FreeFallDown}
+\caption{Free body diagram for an object released from rest a short distance above the surface of Earth.
+Note that the velocity will always be negative while the ball is falling, so that the drag force will always 
+be in the positive direction.}
+\label{fig-FreeFall}       % Give a unique label
+\end{figure}
+\subsection{Theoretical Picture}
+\label{sec-LinDragTheory}
+The drag force $F_d$ is actually a complicated force that depends on the shape of the object, its speed, and the density of the air and only in simple situations can we \textbf{analytically} calculate its exact form. We begin by working out one such case; we assume that the drag force is proportional to the speed of the ball (this is only good for very small velocities; realistic projectiles dropped from appreciable heights are better modeled by air resistance that is proportional to the square of the speed). Then we can write the equation of motion for the ball as 
+
+$$- m g + b v_y = m(a_y),$$
+where $a_y$ is the acceleration of the ball as it falls. Now, multiplying by $-1/m$,
+$$ g - \frac{b}{m} v_y = -a_y .$$
+Since the acceleration is the derivative of the velocity, and the velocity is increasing in the negative directions, $a_y = -\frac{dv}{dt}$, and we can write this as 
+\begin{equation}
+	g - \frac{b}{m} v_y = \frac{d v_y}{dt}
+	\label{eq-diffeqLinDrag}
+\end{equation}
+Then, multiplying by $dt$ and dividing by $g - \frac{b}{m} v_y$, we have
+$$
+	\frac{dv_y}{g - \frac{b}{m} v_y} = dt
+$$
+This equation can be easily integrated to yield 
+$$
+-\frac{m}{b}\ln\left(g - \frac{b}{m} v_y\right) = t + const
+$$
+or, using the properties of the logarithm, the speed of the ball is 
+\begin{equation}
+v_{y} (t) = \frac{mg}{b}\left(1-\frac{A}{g}e^{-\frac{b}{m}t}\right)
+\label{eq:VvsT_LinDrag1}
+\end{equation}
+where $A$ is some constant. We determine the constant $A$ by the initial condition $v_y(0) = 0$, and this implies that $A=g$; hence Equation~\ref{eq:VvsT_LinDrag1} simplifies to
+\begin{equation}
+v_{y} (t) = \frac{mg}{b}\left(1-e^{-\frac{b}{m}t}\right)
+\label{eq:VvsT_LinDrag2}
+\end{equation}
+If the object falling falls for a sufficiently long time, then the air resistance will continue to increase as its speed increases, and at some point, the air resistance will be equal in size to the gravitational pull on the object; at this point, the net force will be zero, and the object will fall at a constant rate referred to as its terminal velocity, $v_t$. 
+
+Looking at Equation~\ref{eq:VvsT_LinDrag2} in the limit $t\rightarrow \infty$, we find that 
+\begin{equation}
+v_t = \frac{mg}{b}
+\label{eq:terminal_v}
+\end{equation}
+and hence, the speed of the falling object as a function of time may also be written as 
+\begin{equation}
+v_{y} (t) = v_{t} \left(1-e^{-\frac{gt}{v_{t}}}\right)
+\label{eq:VvsT_LinDrag3}
+\end{equation}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{Figures/Kinematics/theory.pdf}
+\caption{Speed vs time for an object falling in a linear drag regime. Notice that if we define a time constant $\tau = v_t/g$, the object reaches 63\% of its terminal velocity after $\tau$ seconds. After several time constants have elapsed, the object is very close to its terminal velocity.}
+\label{fig-LinearDrag}       % Give a unique label
+\end{figure}
+Notice that if we define a time constant $\tau = v_{t}/g$, we can write this as
+\begin{equation}
+v_{y} (t) = v_{t} \left(1-e^{-\frac{t}{\tau}}\right)
+\label{eq:VvsT_LinDrag4}
+\end{equation}
+and then, when $t=\tau$, the speed will be $v_{y} (t=\tau) = v_{t} \left(1-e^{-1}\right)\approx 0.63v_t$. After two time constants, the speed will be at $\approx 0.86v_t$. After four time constants, the speed will be within 2\% of its terminal value. This can be seen in Figure~\ref{fig-LinearDrag}
+
+\subsection{Simulation of Linear Drag}
+\label{sec-LinDragSimulation}
+Now, suppose we want to simulate the free fall motion of the ball that we've just analytically discussed. To do so, we begin with Newton's equation of motion for the ball (Equation~\ref{eq-diffeqLinDrag}) 
+\begin{equation}
+	\frac{d v_y}{dt} = g - \frac{b}{m} v_y,
+	\label{eq-diffeqEuler}
+\end{equation}
+and multiply both sides by dt:
+$$ d v_y = \left(g - \frac{b}{m} v_y\right) dt.$$
+then, we \textbf{approximate} the change in $v_y$ by 
+$$\Delta v_y \approx \left(g - \frac{b}{m} v_y\right) \Delta t.$$
+A more convenient form to write this in is to use the definition of the terminal velocity (Equation~\ref{eq:terminal_v}) to write this as
+\begin{equation}
+	 \Delta v_y \approx g\left(1 - \frac{v_y}{v_t}\right) \Delta t.
+\end{equation}
+This is the form we will use to numerically integrate the equation of motion.
+If we are given the initial velocity in the vertical direction as $v_{y}(0)$, then a time $\Delta t$ later, the velocity is 
+$$v_y(\Delta t) \approx v_{y}(0)+ \Delta v_y,$$
+or 
+$$v_y(\Delta t) \approx v_{y}(0) + g\left(1 - \frac{v_{y}(0)}{v_t}\right) \Delta t $$
+notice that we are using the value of the known initial velocity to determine the velocity at the next time step. In a similar fashion, the velocity after one more time step is 
+$$v_y(2\Delta t) \approx v_{y}(\Delta t) + g\left(1 - \frac{v_{y}(\Delta t)}{v_t}\right) \Delta t. $$
+The value of the velocity at the next time step is the value at the previous step, plus the dervivative $\frac{dv}{dt}$ evaluated at this previous time step times $\Delta t$. This is called the \textbf{Euler Method}, and is the simplest method for numerically solving a differential equation. Soon, we will see its origins and its limitations; for now, here is a piece of Python code to solve for the speed of the dropped ball using linear air drag:
+\pagebreak
+
+\lstinputlisting[style = myPythonStyle, caption={This program uses the Euler method to solve for the velocity of a ball falling under the influence of a drag force proportional to the speed of fall. It also plots the analytic solution for comparison purposes.}, label=code:FreeFallLinearDrag, frame=single]{Code/Kinematics/FreeFall_V.py}
+Here is the file EulerFreeFall.py, which contains the functions that implement the Euler method:
+\lstinputlisting[style = myPythonStyle, caption={The contents of the file EulerFreeFall.}, label=code:EulerFreeFall, frame=single]{Code/Kinematics/EulerFreeFall.py}
+
+For a ball bearing of diameter 1.25 cm falling in glycerin, the terminal velocity is roughly 0.2 m/s (see ~\cite{Baamann:2002}). If we run the script in Listing~\ref{code:FreeFallLinearDrag} with 
+\begin{itemize}
+	\item vinitial = 0.0
+	\item vterminal = 0.2
+	\item  tmax=0.2
+	\item dt=0.01
+\end{itemize}
+we obtain the output shown in Figure~\ref{fig:glycerin}.
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{Figures/Kinematics/FreeFallVertical}
+\caption{Speed vs time for a 1.25 cm diameter ball bearing falling through glycerin at room temperature. Note that the time step is clearly too large,
+since the simulation is clearly not a good fit to the analytic solution.}
+\label{fig:glycerin}       % Give a unique label
+\end{figure}
+
+Notice that Figure~\ref{fig:glycerin} shows the exact (analytic) solution, as well as the simulated solution via the Euler Method. In running the simulation, the time step of 0.01 was clearly too large. This is evidenced by the poor disagreement with the analytic solution. In a situation such as this one, where the analytic solution is available, it is easy to make a comparison; however, we typically employ a computer simulation to solve a problem that is \textbf{not} analytically solvable. How do we decide on an appropriate time step then?
+
+There are two answers to this question. First, we should always check our simulation's reasonableness by inputing parameters that are analytically solvable. For instance, in the previous problem, we can set the terminal velocity to be very large (ideally infinite, but a large number will do) and check to see that we recover the behavior of a ball falling freely in a gravitational field. Second, we can run the simulation with smaller and smaller time steps until the solutions converge upon one another. 
+
+\subsection{Simulation of Linear Drag: \textsf{argparse} package}
+\label{sec-LinDragArgParse}
+
+
+For example, here is Listing~\ref{code:FreeFallLinearDrag} modified in the following manner: 
+\begin{itemize}
+	\item We use the \texttt{argparse} (argument parsing) package to parse (i.e. read in) the options passed from the command line.
+	\item We add the ability to specify several different time steps (in fact, as many as you want!), and the code runs once for each one and plots all of them out, complete with a labeled legend. 
+	\item Among the input options is the ability to automatically save a pdf or png of the resulting plot.
+\end{itemize}
+The \texttt{argparse} package is now part of the python standard library, and is the recommended method of parsing input parameters from the command line. 
+\lstinputlisting[style = myPythonStyle, caption={This program uses the Euler method to solve for the velocity of a ball falling under the influence of a drag force proportional to the speed of fall. You may enter any number of different time steps, and the program will run once for each one. The program also uses the \texttt{argparse} package to parse input parameters.}, label=code:FreeFallArgParse, frame=single]{Code/Kinematics/FreeFallArgParse.py}
+
+The \texttt{argparse} package is designed to parse the input parameters from the command line; 
+We use the previous input parameters to run the program: 
+\begin{itemize}
+	\item vinitial = 0.0
+	\item vterminal = 0.2
+	\item tmax=0.2
+	\item dt=0.01
+\end{itemize}
+and then add two more time steps (dt=0.001, and 0.0001), and save the plot to a pdf file; then we run this program as follows:\\
+\begin{lstlisting}[style = pythonSnippet]
+python FreeFallArgparse.py --filename junk --v_initial 0.0\
+--v_terminal 0.2 --tmax 0.2 --dt 0.01 \
+--dt 0.005 --dt 0.001 --savePlot pdf
+\end{lstlisting}
+and this produces the output shown (I had to add a line ylim(0, 0.21) manually for aesthetic reasons) in Figure~\ref{fig:FreeFallArgparse}
+\begin{figure}[b]
+\centering
+\includegraphics[width = \textwidth]{Figures/Kinematics/FreeFallArgparse.pdf}
+\caption{Speed vs time for a 1.25 cm diameter ball bearing falling through glycerin at room temperature; three different time steps are shown.}
+\label{fig:FreeFallArgparse}       % Give a unique label
+\end{figure}
+The convergence of the simulation to the analytical result in this figure is very clear; in fact, a plot of the analytical result lies almost directly on top of the trial with dt=0.001 seconds (at dt = 0.0001 seconds, the analytic and Euler method are essentially identical; try it and see!).
+
+
+
+
+\pagebreak
+%
+\section{Projectile Motion in Two Dimensions}
+\label{sec-2d}
+%
+Now that we have solved a few one-dimensional problems, let's work out how to numerically integrate Newton's 2nd law for  motion in two dimensions. Building on our work modeling air resistance, let's reason out the physics for projectile motion with quadratic drag. 
+
+At high velocities (technically, when the Reynolds number, R$_e  > 1000$), we can write the drag force, $F_\mathrm{D}$ on an object moving through a fluid of density $\rho$ as roughly
+\begin{equation} 
+\vec{F}_{\mathrm{D}} = - \frac{1}{2}\rho C_d A v^2\;\hat{v} 
+\label{eq:drag}
+\end{equation}
+where 
+$C_d$ is the drag coefficient (depends on velocity; 0.07 to 0.5 for a sphere, for example, $\approx 0.04$ for a plane, 0.25 to 0.45 for a car), $A$ is the cross-sectional area, and $v$ is the speed for the speed of the object through the fluid.
+
+Notice, of course, that the drag force is always opposite the velocity, so we can draw the free-body diagram on (for example) a sphere as in Figure~\ref{fig:2DFreeBody}:
+\begin{figure}\centering
+	\includegraphics[width=3.0in]{Figures/Kinematics/2DFreeBody.png}
+	\caption{A sphere moving in two dimensions with air drag.}\label{fig:2DFreeBody}
+\end{figure}
+
+Now, let's consider a sphere traveling through the air with a drag force quadratic in the velocity and of the general form 
+$$  \vec{F}_{\mathrm{D}} = - B v^2\;\hat{v}.   $$
+Applying Newton's second law (using a Cartesian coordinate system) and keeping in mind that 
+$$\hat{v} = \frac{\vec{v}}{v} = \frac{v_x \,\hat{\imath} + v_y \,\hat{\jmath}}{\sqrt{v_x^2 + v_y^2}}$$
+we see that the drag force is 
+$$  \vec{F}_{\mathrm{D}} = - B v\;\left(v_x \,\hat{\imath} + v_y \,\hat{\jmath}\right).    $$
+and therefore Newton's second law in the x and y directions is 
+$$ m \frac{dv_x}{dt} = -B v v_x $$
+and 
+$$  m \frac{dv_y}{dt} = -B v v_y -mg. $$
+
+We can now write down the governing equations to simulate the motion using the Euler method: 
+$$ x_{i+1} = x_i + v_{x_i} \Delta t $$
+$$ y_{i+1} = y_i + v_{y_i} \Delta t $$
+$$ v_{x_{i+1}} = v_{x_i} - \frac{B v_i v_{x_i}}{m}\Delta t $$
+$$ v_{y_{i+1}} = v_{y_i} - \frac{B v_i v_{y_i}}{m}\Delta t - g\Delta t $$
+where the speed, $v_i$ is 
+$$v_i = \sqrt{v^2_{x_i} + v^2_{y_i}}$$
+Notice that to update the x and y velocities, we need to know the value of $B/m$; so let's calculate this value assuming the simplest case of a sphere of density $\rho_s$ moving through air with density $\rho_a$. Notice that we can write equation~\ref{eq:drag} as
+\begin{equation} 
+\vec{F}_{\mathrm{D}} = - \frac{1}{2}\rho \,C_d A v^2 \;\hat{v} = -B \, v^2 \;\hat{v}
+\label{eq:dragModified}
+\end{equation}
+where $B=\frac{1}{2}\rho \,C_d A$ and therefore a sphere with cross-sectional area $A = \pi R^2$, has 
+\begin{equation}
+	\frac{B}{m} = \frac{\frac{1}{2}\rho_a C_d \pi R^2}{\frac{4}{3}\pi R^3 \rho_s}
+\end{equation}
+where $\rho_a$ and $\rho_s$ are the densities of the air and the sphere, respectively.
+If we make the assumption that $C_d = \frac{1}{2}$ for the drag coefficient, then we have 
+\begin{equation} 
+	\frac{B}{m} = \frac{3}{16} \frac{\rho_a}{\rho_s} \, \frac{1}{R}
+\end{equation}
+and therefore, our set of governing equations to numerically integrate Newton's laws for the sphere using the Euler method are summarized in Equation~\ref{eq:2dEuler}. To implement the method, you \textit{first calculate the new positions}, and \textit{then you update the velocities}.
+\begin{eqnarray}
+ x_{i+1} & = & x_i + v_{x_i} \Delta t     \nonumber \\
+ y_{i+1} & = & y_i + v_{y_i} \Delta t  \nonumber \\
+ v_{x_{i+1}} & = & v_{x_i} - \frac{B v_i v_{x_i}}{m}\Delta t \nonumber \\
+ v_{y_{i+1}} & = & v_{y_i} - \frac{B v_i v_{y_i}}{m}\Delta t - g\Delta t \nonumber \\[4mm]
+ \mathrm{where} & &\nonumber \\[4mm]
+ v_i &  = & \sqrt{v^2_{x_i} + v^2_{y_i}} \nonumber \\[4mm]
+ \frac{B}{m} & = & \frac{3}{16} \frac{\rho_a}{\rho_s} \, \frac{1}{R} \nonumber \\
+ \label{eq:2dEuler}
+ \end{eqnarray}
+ 
+ \subsection{The Euler--Cromer Method}
+The Euler method (pronounced---by the way---as ``oil-er'') calculates the new positions based on the \textit{old} positions and velocities, and calculates the new velocities based on the \textit{old} values of the position and velocities. 
+
+We will find that for periodic motion (this includes planetary motion, and any oscillatory system), the Euler method does not conserve energy, and the simplest modification that conserves energy (over the course of one oscillation) is the Euler--Cromer method. The Euler--Cromer method differs from the Euler method in that the new velocities are calculated first, and then the new positions are calculated with the \textit{new} velocities and the old positions. Hence, the equations and ordering needed to implement the Euler--Cromer method for our problem would look like:
+\begin{eqnarray}
+ v_{x_{i+1}} & = & v_{x_i} - \frac{B v_i v_{x_i}}{m}\Delta t \nonumber \\
+ v_{y_{i+1}} & = & v_{y_i} - \frac{B v_i v_{y_i}}{m}\Delta t - g\Delta t \nonumber \\
+ x_{i+1} & = & x_i + v_{x_{i+1}} \Delta t     \nonumber \\
+ y_{i+1} & = & y_i + v_{y_{i+1}} \Delta t  \nonumber \\[4mm]
+ \mathrm{where} & &\nonumber \\[4mm]
+ v_i &  = & \sqrt{v^2_{x_i} + v^2_{y_i}} \nonumber \\[4mm]
+ \frac{B}{m} & = & \frac{3}{16} \frac{\rho_a}{\rho_s} \, \frac{1}{R} \nonumber \\
+ \label{eq:2dEulerCromer}
+\end{eqnarray}
+
+
+\pagebreak 
+
+\section{Planetary Motion in Two Dimensions}
+\label{sec-planetaryMotion}
+
+For another aspect of two dimensional motion, we consider the motion of two massive bodies moving in a plane under the influence of Newton's Law of Gravitation, which gives the magnitude of the mutually attractive gravitational force between two masses $m_1$ and $m_2$ as
+$$  F = \mathrm{G}\frac{m_1 m_2}{r^2}   $$
+where, in the case of spherical masses, $r$ is the distance between the centers of the two objects. In reality, for two arbitarily shaped objects, we need to perform an integration over the volume of each object, a complication that we will not entertain in this chapter.
+
+\begin{figure}[tb]\centering \sidecaption
+	\includegraphics[width=2.25in]{Figures/Kinematics/gravityCoordSystem.pdf}
+	\caption{The Cartesion coordinate system we'll use to begin simulating gravitational interaction. The locations of the masses $m_1$ and $m_2$ are given relative to some arbitrary origin, and the vector $\vec{r}_{12} = \vec{r_2}- \vec{r_1}$ points from mass 1 toward mass 2.}
+	 \label{fig:gravityCoordSystem}
+\end{figure}
+Figure~\ref{fig:gravityCoordSystem} shows the Cartesian coordinate system we will use;  we see that we can write the gravitational force \textit{on} mass 1 \textit{due to} mass 2 as\\ 
+\begin{equation}
+	\vec{F}_{12} = G\frac{m_1 m_2}{r_{12}^2} \hat{r}_{12} \label{eq:gravity}
+\end{equation}
+where
+\begin{equation}
+	\vec{r}_{12} = \vec{r}_2 - \vec{r}_1 = (x_2 - x_1)\hat{x} + (y_2 - y_1)\hat{y} 	
+\end{equation}
+and 
+\begin{equation}
+\hat{r}_{12} = \frac{\vec{r}_{12}}{r_{12}} = \frac{(x_2 - x_1)\hat{x} + (y_2 - y_1)\hat{y}}{r_{12}}	
+\end{equation}
+thus, putting this all together, we can write (using Newton's 2nd Law: $\sum F_{12} = m_1 \frac{dv_1}{dt} $)
+$$  
+m_1\frac{dv_1}{dt} =  G\frac{m_1 m_2}{r_{12}^3}\left\{(x_2 - x_1)\hat{x} + (y_2 - y_1)\hat{y}\right\} 	
+$$
+and therefore (cancelling $m_1$ and using $v_1 = v_{1x} \hat{x} + v_{1y} \hat{y}$) we have
+\begin{eqnarray}
+	dv_{1x} & = & G\frac{m_2}{\left\{(x_2 - x_1)^2 + (y_2 - y_1)^2\right\}^\frac{3}{2} }(x_2 - x_1) dt\\
+	dv_{1y} & = & G\frac{m_2}{\left\{(x_2 - x_1)^2 + (y_2 - y_1)^2\right\}^\frac{3}{2} }(y_2 - y_1) dt.\\
+\end{eqnarray}
+With the identifications $\Delta v_{1x} \approx dv_{1x}$ and $\Delta t \approx dt$, we rewrite these as 
+\begin{eqnarray}
+	\Delta v_{1x} & = & G\frac{m_2}{\left\{(x_2 - x_1)^2 + (y_2 - y_1)^2\right\}^\frac{3}{2} }(x_2 - x_1) \Delta t\\
+	\Delta v_{1y} & = & G\frac{m_2}{\left\{(x_2 - x_1)^2 + (y_2 - y_1)^2\right\}^\frac{3}{2} }(y_2 - y_1) \Delta t.\\
+\end{eqnarray}
+If we go through the same logic for mass $m_2$, we notice two things: (1) Newton's 3rd Law tells us that the force on $m_2$ is equal and opposite to the force on $m_1$ (so $\vec{F}_{21} = - \vec{F}_{12}$), and (2) when writing down Newton's 2nd Law, the factor $m_2$ will cancel (instead of $m_1$) Hence, with these ideas, we can write down the Euler-Cromer method for numerically integrating a two-body gravitational system in 2d.
+
+\subsection{Euler-Cromer equations for 2 body gravitating system}
+Here are the equations for mass 1:
+\begin{eqnarray}\
+v_{1x}[i+1] & = & v_{1x}[i] + G\frac{m_2}{\left\{(x_2[i] - x_1[i])^2 + (y_2[i] - y_1[i])^2\right\}^\frac{3}{2} }(x_2[i] - x_1[i]) \,\Delta t \nonumber \\
+v_{1y}[i+1] & = & v_{1y}[i] + G\frac{m_2}{\left\{(x_2[i] - x_1[i])^2 + (y_2[i] - y_1[i])^2\right\}^\frac{3}{2} }(y_2[i] - y_1[i]) \,\Delta t. \nonumber \\[2mm]
+& \mathrm{and} & \nonumber \\[2mm]
+x_1[i+1] & = & x_1[i] + v_{1x}[i+1]\,\Delta t \nonumber \\
+y_1[i+1] & = & y_1[i] + v_{1y}[i+1]\,\Delta t \nonumber \\
+\label{eq:EC_gravity_body1}
+\end{eqnarray}
+And here are the equations for mass 2:
+\begin{eqnarray}
+v_{2x}[i+1] & = & v_{2x}[i] - G\frac{m_1}{\left\{(x_2[i] - x_1[i])^2 + (y_2[i] - y_1[i])^2\right\}^\frac{3}{2} }(x_2[i] - x_1[i]) \,\Delta t \nonumber \\
+v_{2y}[i+1] & = & v_{2y}[i] - G\frac{m_1}{\left\{(x_2[i] - x_1[i])^2 + (y_2[i] - y_1[i])^2\right\}^\frac{3}{2} }(y_2[i] - y_1[i])\, \Delta t.\nonumber \\[2mm]
+& \mathrm{and} &\nonumber \\[2mm]
+x_2[i+1] & = & x_2[i] + v_{2x}[i+1]\,\Delta t\nonumber \\
+y_2[i+1] & = & y_2[i] + v_{2y}[i+1]\,\Delta t\nonumber \\
+\label{eq:EC_gravity_body2}
+\end{eqnarray}
+
+\subsubsection{Euler-Cromer equations in vector form}
+With an eye toward implementing the above, we can anticipate the use of a vector for the position and velocity of each mass; with 
+$$  | r_{12}^3 | = \left( (x_2 - x_1)^2 + (y_2 - y_1)^2 \right)^{(\frac{3}{2})} ,  $$
+we write Equations~\ref{eq:EC_gravity_body1} and ~\ref{eq:EC_gravity_body2} more simply in vector form as
+\begin{eqnarray}
+\vec{v}_1[i+1] & = & \vec{v}_1[i] + G\frac{m_2}{ |r_{12}|^3 }\left( \vec{r}_2[i] - \vec{r}_1[i] \right) \,\Delta t \nonumber \\
+\vec{r}_1[i+1] & = & \vec{r}_1[i] + \vec{v}_{1}[i+1]\,\Delta t \nonumber \\
+\mathrm{and} &   & \nonumber \\[2mm]
+\vec{v}_2[i+1] & = & \vec{v}_2[i] - G\frac{m_1}{ |r_{12}|^3 }\left( \vec{r}_2[i] - \vec{r}_1[i] \right) \,\Delta t \nonumber \\
+\vec{r}_2[i+1] & = & \vec{r}_2[i] + \vec{v}_{2}[i+1]\,\Delta t \nonumber \\
+\label{eq:EC_gravity_Vector}
+\end{eqnarray}
+
+
+
+
+\subsection{Natural units for the gravitating system}
+If one would like to begin numerically integrating Equations~\ref{eq:EC_gravity_body1} and ~\ref{eq:EC_gravity_body2} (or, equivalently, Equation~\ref{eq:EC_gravity_Vector}), and you're comfortable with using SI units, then we're really good to go. Then, before plotting the motion, it might be convenient to scale all distances to astronomical units (1 Astronomical Unit (AU) =  mean Earth-Sun distance = $1.496\times 10^{11}$ m). 
+
+Another option---and it's really not necessary, only convenient---is to change all the variable to dimensionless form in the following manner (well use human/solar system -- centric units where masses are in solar masses, distances are in AU, time in years, and velocities in AU/yr.); then we cast each variable into dimensionless form as follows:
+\begin{eqnarray}
+	m & = & \frac{m}{m_s}\cdot m_s   \equiv  \tilde{m} \cdot (m_s)\nonumber \\
+	r & = & \frac{r}{1\,\mathrm{AU}} \cdot (1\,\mathrm{AU})  \equiv \tilde{r}\cdot (1\,\mathrm{AU})\nonumber \\
+	v & = & \frac{v}{1\,\mathrm{AU/yr}}\cdot (1\,\mathrm{AU/yr})  \equiv  \tilde{v} \cdot (1\,\mathrm{AU/yr}) \nonumber \\
+	t & = & \frac{t}{1\,\mathrm{yr}} \cdot (1\,\mathrm{yr})  \equiv  \tilde{t} \cdot (1\,\mathrm{yr})\nonumber \\
+	\label{eq:dimensionless}
+\end{eqnarray}
+I'll leave it as an exercise to the reader (as well as for a problem at the end of this chapter) to substitute these equations into Equation~\ref{eq:EC_gravity_Vector}; then, after simplifying and collecting terms, one finds that the only change is to replace the existing variables with their dimensionless $\tilde{variable}$ form and that the constant G is replaced by 
+$$ \frac{G\cdot m_s \cdot (1\,\mathrm{yr})^2}{(1\,\mathrm{AU})^3}  = 4\pi^2$$
+and then we have the following equations with all variables in dimensionless form:
+\begin{eqnarray}
+\vec{\tilde{v}}_1[i+1] & = & \vec{\tilde{v}}_1[i] + 4\pi^2\frac{\tilde{m}_2}{ |\tilde{r}_{12}|^3 }\left( \vec{\tilde{r}}_2[i] - \vec{\tilde{r}}_1[i] \right) \,\Delta \tilde{t} \nonumber \\
+\vec{\tilde{r}}_1[i+1] & = & \vec{\tilde{r}}_1[i] + \vec{\tilde{v}}_{1}[i+1]\,\Delta \tilde{t} \nonumber \\
+\mathrm{and} &   & \nonumber \\[2mm]
+\vec{\tilde{v}}_2[i+1] & = & \vec{\tilde{v}}_2[i] - 4\pi^2\frac{\tilde{m}_1}{ |\tilde{r}_{12}|^3 }\left( \vec{\tilde{r}}_2[i] - \vec{\tilde{r}}_1[i] \right) \,\Delta \tilde{t} \nonumber \\
+\vec{\tilde{r}}_2[i+1] & = & \vec{\tilde{r}}_2[i] + \vec{\tilde{v}}_{2}[i+1]\,\Delta \tilde{t} \nonumber \\
+\label{eq:EC_gravity_VectorDimensionless}
+\end{eqnarray}
+
+
+\subsection{Creating our simulation}
+\label{subsec:twoBody}
+
+To simulate our system, we will save ourselves considerable time by using the capabilities of the numerical python package; in particular, we will define the postion and velocity of each particle as numpy arrays, and will use the linear algebra package's \textit{norm} package to fine the length of $r_2 - r_1$.
+
+\begin{lstlisting}[frame=none, style = pythonSnippet]
+pi = math.pi
+G = 4*math.pi*math.pi
+AU = 1.496e11
+M_SUN = 1.989e30
+M_EARTH = 5.974e24
+## define dimensionless masses:
+m1 = 1.0
+m2 = M_EARTH/M_SUN
+## define initial positions and velocities as vectors:
+r1 = np.array([0.0, 0.0])
+r2 = np.array([1.0, 0.0])
+cm = ( m1*r1 + m2*r2 ) /(m1 + m2)
+v1 = np.array([0.0, -2.0*pi*m2/m1])   ## this insures that ptotal = 0
+v2 = np.array([0.0, 2.0*pi])
+dt = 0.001
+tmax = 1.0
+
+\end{lstlisting}
+
+
+
+
+\pagebreak
+
+% Problems or Exercises should be sorted chapterwise
+\section*{Problems}
+\addcontentsline{toc}{section}{Problems}
+%
+% Use the following environment.
+% Don't forget to label each problem;
+% the label is needed for the solutions' environment
+
+\begin{prob}
+\label{prob2.1}
+Modify the program \textsf{Falling Ball} to correctly deal with air resistance that is proportional to the square of the velocity. This is the air resistance that is a better model for objects such as bowling balls falling from the tops of buildings.  
+The magnitude of the air drag, $F_d$ in this case is 
+$$ F_d = b_2 v^2 $$
+where $b_2$ is a constant that (in general) must be determined empirically. If a ball is dropped and allowed to achieve terminal velocity, then the drag force will be equal to the pull of gravity, and we will have
+$$ mg = b_2 v_{t}^2$$
+and therefore, the constant $b_2$ will be 
+$$ b_2 = \frac{mg}{v_{t}^2},$$
+which allows us to rewrite the drag force in terms of the terminal velocity:
+$$ F_d = mg \left(\frac{v}{v_t}\right)^2 $$
+Let's assume that we have a ball of radius 0.01 m, where the terminal velocity in air is found to be about 30 m/s. Now, following the reasoning in Section~\ref{sec-LinDragSimulation}, modify the code in program \textsf{Falling Ball} to use quadratic air resistance (also referred to as inertial drag), and compute the speed at which this pebble reaches the ground if it is dropped from rest from a height of 100 m. Compare this speed to a a freely falling object with no air resistance. 
+\end{prob}
+
+\begin{prob}
+\label{2d}
+Using an initial velocity of 100 m/s and a launch angle of $30^o$, simulate the 2d motion of three different objects. Each scenario is assumed to be taking place at the surface of Earth:
+\begin{enumerate}
+	\item A steel ball with density 8000 kg/m$^3$ traveling through an enormous vacuum chamber.
+	\item A 2 cm diameter steel ball with density 8000 kg/m$^3$ traveling through air of density 1.2 kg/m$^3$
+	\item A  2 cm balsa wood ball with density 160 kg/m$^3$ traveling through air of density 1.2 kg/m$^3$
+\end{enumerate}
+a) Make sure to test that your simulation for the zero air resistance case agrees with basic kinematics (it goes without saying that you should do this!) and check to see that the other two situations give sensible results. \\
+b) Make a plot of y .vs. x for the three scenarios.\\
+c) Plot the total mechanical energy .vs. time for the three scenarios. Discuss this plot in your report. Does the Euler method properly conserve energy for the zero air resistance case? Should it? What about the other cases?\\
+Lastly, \\
+(d) modify your program to find the launch angle that gives the maximum range for the steel ball and the balsa wood ball. Assume that the initial launch speed is 100 m/s. 
+Write all this up using the LaTeX report template. Follow the guidelines closely; the quality of the writing in the report is important. I'll reject it and return it to you if it's poorly written, and you'll have to re-submit your report.\\
+\end{prob}
+
+\begin{prob} \label{dimensionless}
+Prove that substituting Equation~\ref{eq:dimensionless} into Equation~\ref{eq:EC_gravity_Vector} yields Equation~\ref{eq:EC_gravity_VectorDimensionless}. Then, using SI units show that
+$$ \frac{G\cdot m_s \cdot (1\,\mathrm{yr})^2}{(1\,\mathrm{AU})^2}  = 4\pi^2$$
+
+\end{prob}
+
+\begin{prob} \label{energy}
+Extend the Earth-Sun simulation so that it calculates the \\
+(a) kinetic, potential, and total energy, and the\\
+(b) total angular momentum \\
+of the system, and investigate how the time time step effects the conservation of energy and angular momentum. Create 3 plots:\\
+(i) the orbit (show 5 complete orbits)\\
+(ii) a plot of kinetic, potential and total energy (all three curves in one plot) vs time.\\ 
+(iii) a plot of total angular momentum vs time.\\
+Show that for time steps that are too large, the orbit is not re-entrant (i.e. it doesn't repeat). What is a reasonable time step to use for the Earth-Sun system?
+\end{prob}
+
+
+
+\begin{prob} \label{escape}
+This question has two parts:\\
+(a) Calculate (theoretically) the minimum speed the Earth needs to escape from the sun.\\
+(b) Now use your simulation to verify your answer in (a).
+\end{prob}
+
+
+\begin{prob} \label{intuition}
+Suppose that you begin with the Earth-Sun simulation (which yields a very nearly circular orbit) and then, after one revolution, you give the Earth a radial kick in velocity of 6 km/s. The orbit will now become elliptical. \\
+(a) Make a prediction (before creating the simulation) about the resulting orientation of the major axis of the ellipse: will the major axis be parallel or perpendicular to the kick direction?\\
+(b) Create the simuation, and see if your intuition was correct. \\
+(c) Repeat the simulation (starting from the circular orbit), but this time give a tangential kick after one year.
+\end{prob}

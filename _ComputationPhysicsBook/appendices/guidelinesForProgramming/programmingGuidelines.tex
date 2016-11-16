@@ -1,0 +1,54 @@
+\chapter{General Guidelines for Programming}
+\label{sec-guidelines}
+Writing a Python script or program is necessarily an individualistic endeavor; those of you just learning the language will clearly write different programs than those who have previous experience. However, There are several guidelines that are good to follow: 
+\begin{itemize}
+	\item Start each program with a pen and paper outline of its structure. For simple programs, this can be a short bit of pseudo code (just a brief outline of the logical steps the script needs to accomplish); for more complicated programs, you will need to actually create a flowchart that explicitly outlines the many logical steps needed. 
+	\item When it comes to writing code, get in the habit of using a logical format; here is a structure suggested by Wesley J. Chun in his book \textit{Core Python Programming}\cite{chun2007}:
+	\begin{enumerate}
+		\item Startup line (Unix; \verb2#!/usr/bin/env python)2
+		\item module documentation (this is what appears between the triple quotes)
+		\item module imports (import statements)
+		\item variable declarations 
+		\item class declarations (we'll get to this later)
+		\item function declarations 
+		\item main body of program
+	\end{enumerate}
+	
+	\item Comment your code as you write. Ideally, your comments should be sufficient for someone else (assumed to be proficient in Python) to understand your code, or equivalently, for you to understand the code a year later.
+	
+	\item Strive for clarity in your code. Especially as you are first learning to program, there is a temptation to include fancy programming techniques. \textbf{Don't}. After you are sure your code produces reasonable results (see the next item!), then you can (if it is worth the time and effort) optimize your code for speed and add new features. 
+	
+	\item Always be \textit{skeptical} of your program's output and check it by testing it for trivial cases where you know an analytical result. Checking your program's validity is one of the most important steps in computational physics and a considerable effort should be made to insure that it is working properly before you move on to apply the code to regions that do not admit of analytical results. 
+	
+	\item Modularize your code and/or use object oriented programming when possible. Modularization improves your code's clarity as well as providing code that can be used by other programs. 
+
+\end{itemize}
+
+Another set of guidelines I find useful is by Tim Peters, and is called \textit{The Zen of Python}. You can always see it by opening a terminal window, starting python and typing \\
+\begin{verbatim}
+>>> import this 
+\end{verbatim}
+and you'll see the following:\\[1cm]
+\textbf{The Zen of Python, by Tim Peters
+}
+\begin{description}
+\item[] Beautiful is better than ugly.
+\item[] Explicit is better than implicit.
+\item[] Simple is better than complex.
+\item[] Complex is better than complicated.
+\item[] Flat is better than nested.
+\item[] Sparse is better than dense.
+\item[] Readability counts.
+\item[] Special cases aren't special enough to break the rules.
+\item[] Although practicality beats purity.
+\item[]  Errors should never pass silently.
+\item[]  Unless explicitly silenced.
+\item[]  In the face of ambiguity, refuse the temptation to guess.
+\item[]  There should be one-- and preferably only one --obvious way to do it.
+\item[]  Although that way may not be obvious at first unless you're Dutch.
+\item[]  Now is better than never.
+\item[]  Although never is often better than *right* now.
+\item[]  If the implementation is hard to explain, it's a bad idea.
+\item[]  If the implementation is easy to explain, it may be a good idea.
+\item[]  Namespaces are one honking great idea -- let's do more of those!
+\end{description}

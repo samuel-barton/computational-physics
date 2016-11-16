@@ -1,0 +1,149 @@
+\documentclass[justified]{tufte-handout}
+%%\documentclass[]{tufte-handout}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+\usepackage{color,booktabs,graphicx}
+\usepackage{hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=blue,
+			urlcolor=blue,
+            anchorcolor=darkblue,
+			citecolor=darkblue,
+			}
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Physics 261: Computational Physics I --- Syllabus}
+\author[Paul A. Nakroshis]{Paul A. Nakroshis}
+\date{Sept 2011}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent Physics 261: Computational Physics I is an introductory course on
+scientific programming using the Python programming language. We will also 
+learn how to use \LaTeX\ for typesetting 
+your reports, as well as several numerical and scientific graphics toolkits. By the 
+end of the semester, you should feel comfortable using Python to solve everyday 
+problems, from data analysis to numerical simulation. 
+ \end{abstract}
+%\printclassoptions
+
+\section{Introduction and Background}\label{sec:page-layout}
+Suppose you take an introductory calculus-based physics course; you will 
+have learned all about Newton's laws of motion and solved many problems
+with an analytical approach. However, one problem you will not have solved
+is a simple problem of throwing a ball while including air resistance. One of the reasons 
+you didn't solve this problem is that it's impossible to solve analytically, since air resistance is 
+a non-linear force\footnote{Actually, it's even worse---air resistance is not really a simple function of velocity at all; for low velocities, one can approximate the air resistance as linear, and but as the speed increases, it's not even correct to treat it as a simple function of the velocity to a fixed power.} However, adding air resistance which is proportional to the square of the particle's velocity, while impossible to solve analytically, is  
+not so complicated to solve computationally. So, one of the great uses of computation is to be able to solve problems 
+via computer that are difficult or impossible to solve with pen and paper. Computers are also incredibly useful at processing and visualizing data, and, accordingly we will introduce you to the numerical python library (numpy) and Matplotlib (useful for visualizing data and functions). 
+
+\section{Textbook}
+A Primer on Scientific Programming with Python, by Hans Petter Langtangen\\
+This is the only required textbook for the course, and we will make
+extensive use of it, from readings to homework problems. It is available
+at the Portland USM bookstore, or online through Amazon.com or many other booksellers. 
+
+\section{Atendance Policy}
+I expect that everyone will be at every class except in extenuating circumstances. If I find that you are missing class too often (i.e. more than three times), you can expect that I will talk with you and that you will likely receive a lower grade for the course, or asked to leave if this repeated absence is coupled with poor quality work written work. 
+
+\section{Outside Help/Office Hours}
+In general, if my office door is open, I am happy to help you, so feel free to stop in
+and ask questions. I have set aside several hours
+where I will make a point to be in my office. Please take advantage of my
+willingness to help you! I can be much more effective one-on-one than I can in
+front of the whole class. 
+
+\section{Grading}
+I am unfortunately contractually obligated to submit a grade for every student. Grading is subjective, and I do my best to submit a grade which represents my sense of your level of understanding and your level of improvement in understanding for the course. You will get regular feedback on each report, as well as on your final written report. In attempt to make this quantitative, Table~\ref{tab:normaltab} shows the grading scheme (note that late reports lose 25\% per day late) for the course: \\
+\begin{table}[h]
+  \centering
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{ll}
+    \toprule
+    Item &  Points\\
+    \midrule
+    Attendance +Perceived Effort & 50 \\
+    Assignments \& Reports* &  700 \\
+    Final Project & 250\\
+    {\bf TOTAL} & 1000 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Grading Scheme for the course. Late reports lose 25\% per day late.}
+  \label{tab:normaltab}
+  %\zsavepos{pos:normaltab}
+\end{table}
+
+\section{General structure of the course}
+We will start with several weeks devoted to becoming familiar with some of the tools we'll use on a daily basis. We'll get you up and running with a Python installation on either Linux or the Mac OS X (you're one you're own if you use windows, though I can give some pointers). We'll also install a working \LaTeX\ distribution. 
+
+After your computer is configured, we'll introduce the typesetting package \LaTeX\ , which practically all physicists use on a regular basis (if not, they should!). This will be a typesetting tool that you will be able to use for all your typesetting needs for the rest of your career (probably!). 
+
+Then we will embark on an introduction to Python, and see how to do a few basic everyday tasks, such as plotting simple figures and reading and writing data files. These first few weeks will involve you completing several short assignments to get you familiar with \LaTeX\ and Python. 
+
+After this, we'll go a little bit more in depth into formal pieces of the Python language, and the rest of the semester will be devoted to the \textit{Physics} in Computational Physics. We will learn how to solve ordinary differential equations by numerical integration, how to solve some physics problems that we avoided in freshmen physics, and move on to other interesting systems involving random processes. The bulk of your work here will be in composing programs, running simulations and writing formal reports on your investigations. 
+
+The capstone for this course will be your final project. Your final project will be 25\% of your grade and will have multiple components as seen in Table~\ref{tab:finalProject}. I've had to learn from previous incarnations of this course to start the final project early. I've also broken down the final project into 4 milestones; the Proposal, two Project Updates, and the Final Report. For this final project, these dates are immutable, and I won't take late submissions. So, put these dates on your physical and mental calendars and plan accordingly. \\
+\begin{table}[h]
+  \centering
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{llr}
+    \toprule
+    Item &  Due Date & Points\\
+    \midrule
+    Project Proposal & 27 Oct 2011 & 50 \\
+    Project Update 1 & 10 Nov 2011 & 25 \\
+    Project Update 2  & 1 Dec 2011 & 25\\
+    Final Project & 14 Dec 2011 &  150\\
+    {\bf TOTAL} & &  {\bf 250} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Grading Scheme for the final project}
+  \label{tab:finalProject}
+  %\zsavepos{pos:normaltab}
+\end{table}
+
+\section{Items to include in Formal Reports}
+{\bf Introduction} - The introduction should give an overview of the problem and an indication of where it fits into the subject of physics.\\{\bf Physics \& Numerical Method} - describe the background physics of the problem, and detail the algorithm that is used to solve the problem. This section should also list relevant snippets of your code to show how it is implemented.  A full listing of your code should always be attached as the last section of your report.\\{\bf Verification} - tell what you did to verify that the program gives correct results; this typically involves showing that your code gives reasonable results for simple cases where an analytic solution is known or obvious.  Generally speaking there should be more than one test used to verify program integrity. \\{\bf Results} - present the results of running the program to demonstrate the behavior of the system under different circumstances. Results might be presented in graphical form or as tables, as appropriate. Be sure that results that are presented are labeled properly, so that the reader can figure out what has been calculated and what is being displayed. Make sure that all figures and tables should have descriptive captions.\\{\bf Conclusion} - present a discussion of the physical behavior of the system based on your simulations and answer any special questions posed in the assignment.\\{\bf Code} - Always provide a full listing of your code at the end of the paper. In LaTeX, there is an excellent package called listings that does an excellent job of formatting code.\\
+
+
+\section{This document}
+ Should you lose this syllabus, an electronic .pdf version of this file (with clickable hyperlinks)  is available online at the \href{http://people.usm.maine.edu/pauln/physics261.html}{ course homepage}  which can be found at \\ \href{http://people.usm.maine.edu/pauln/physics261.html}{http://people.usm.maine.edu/pauln/physics261.html}.\\
+ Information about other physics courses can be found at the  \href{http://usm.maine.edu/phy}{Physics Department Homepage}.
+\end{document}

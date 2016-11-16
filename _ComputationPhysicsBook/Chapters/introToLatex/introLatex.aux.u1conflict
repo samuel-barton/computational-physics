@@ -1,0 +1,70 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Brief introduction to \LaTeX  \ }{1}{chapter.1}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:introLaTeX}{{1}{1}{Brief introduction to \LaTeX \ }{chapter.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Basic idea of \LaTeX  \ }{1}{section.1.1}}
+\newlabel{sec:basic}{{1.1}{1}{Basic idea of \LaTeX \ }{section.1.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}A simple \LaTeX  \ document}{2}{section.1.2}}
+\newlabel{sec:simple}{{1.2}{2}{A simple \LaTeX \ document}{section.1.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Some popular \LaTeX  \ document types for the documentclass declaration.\relax }}{3}{table.caption.3}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:docTypes}{{1.1}{3}{Some popular \LaTeX \ document types for the documentclass declaration.\relax }{table.caption.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.2}{\ignorespaces Several good \LaTeX  \ references.}}{4}{table.caption.4}}
+\newlabel{tab:latexRefs}{{1.2}{4}{Several good \LaTeX \ references}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}\LaTeX  \ editor recommendations}{4}{section.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}\LaTeX  \ only editors}{4}{subsection.1.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}\LaTeX  \ and Python editors}{4}{subsection.1.3.2}}
+\newlabel{exer:latex1}{{1.1}{5}{\LaTeX \ and Python editors}{theorem.1.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}How to include mathematics into \LaTeX  \ }{5}{section.1.4}}
+\newlabel{sec:math}{{1.4}{5}{How to include mathematics into \LaTeX \ }{section.1.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Inline equations}{5}{subsection.1.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}Centered and un-numbered equations}{5}{subsection.1.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.3}Subscripts \& superscripts}{6}{subsection.1.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.4}Numbered equations}{6}{subsection.1.4.4}}
+\newlabel{eq:sillyIntegral}{{1.1}{6}{Numbered equations}{equation.1.4.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}How to include Python code in your \LaTeX  \ document}{6}{section.1.5}}
+\newlabel{sec:listings}{{1.5}{6}{How to include Python code in your \LaTeX \ document}{section.1.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.1}Short code snippet}{7}{subsection.1.5.1}}
+\newlabel{includePythonSnippet}{{1.1}{7}{Including a short python snippet}{lstlisting.1.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.1}Including a short python snippet}{7}{lstlisting.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5.2}Extended Section of Code}{8}{subsection.1.5.2}}
+\newlabel{plot}{{1.2}{9}{\LaTeX \ output by direct reference to a python file}{lstlisting.1.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1.2}\LaTeX  \ output by direct reference to a python file.}{9}{lstlisting.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.6}Final Words on \LaTeX  \ }{9}{section.1.6}}
+\newlabel{ex:latexStep1}{{1.2}{10}{Final Words on \LaTeX \ }{theorem.1.6.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.3}{\ignorespaces Some of my favorite things.\relax }}{10}{table.caption.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Albert Einstein, image in the public domain; from \textit  {Wikipedia}.\relax }}{11}{figure.caption.6}}
+\newlabel{fig:Einstein}{{1.1}{11}{Albert Einstein, image in the public domain; from \textit {Wikipedia}.\relax }{figure.caption.6}{}}
+\@setckpt{Chapters/introToLatex/introLatex}{
+\setcounter{page}{12}
+\setcounter{equation}{1}
+\setcounter{enumi}{7}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{4}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{section}{6}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{1}
+\setcounter{table}{3}
+\setcounter{chapter}{1}
+\setcounter{theorem}{2}
+\setcounter{prob}{0}
+\setcounter{merk}{0}
+\setcounter{lstnumber}{13}
+\setcounter{Item}{7}
+\setcounter{Hfootnote}{4}
+\setcounter{bookmark@seq@number}{15}
+\setcounter{cp@cntr}{0}
+\setcounter{ContinuedFloat}{0}
+\setcounter{pp@next@reset}{0}
+\setcounter{lstlisting}{2}
+\setcounter{section@level}{1}
+}

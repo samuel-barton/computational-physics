@@ -1,0 +1,227 @@
+%%!TEX root = %/Users/pauln/Dropbox/DocumentsF/_Research/CurrentProjects/_ComputationPhysicsBook/CompPhysicsPython.tex
+\documentclass[envcountsame,envcountchap]{usm}
+%% my additions:
+%\textheight=7.5in
+\usepackage[UKenglish]{datetime}
+\usepackage{draftwatermark}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{pdfsync}
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+%\usepackage[xetex]{hyperref}
+\usepackage[breaklinks]{hyperref}
+\usepackage{changepage}
+\usepackage{amssymb}
+% \newcommand{\mytilde}{\lower.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
+%%
+%%
+%%		Define a ipython notebook view html reference:
+%% 
+\newcommand{\ipynb}[1]{%
+    \href{http://nbviewer.ipython.org/url/media.usm.maine.edu/~pauln/iPythonNotebooks/#1}{#1}%
+}
+%%
+%%
+%%
+%%		Define new HUGE fontsize:
+%%
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+%%  {\fontsize{50}{60}\selectfont Foo}
+
+\newcommand{\myTextSize}[3]{\fontsize{#1}{#2}\selectfont #3} 
+
+%%   Add fontspec and compile with XELaTeX:
+%%   (i.e. if you uncomment the next  two lines, 
+%%    then make sure to change compile method
+%%	  to XELaTeX) 
+%%    **** >>> Also, with XELaTeX, you need to 
+%%    use .pdf figures, as XELaTeX has trouble with 
+%%    jpeg images and will give errors saying it couldn't
+%% 	  read the file.
+
+\usepackage{fontspec}
+%%\setmainfont{EB Garamond}
+\setmainfont{Times New Roman}
+
+%%%%%%%%%%%%  Color Definitions:
+
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{comment}{rgb}{0.7,0.5,0}
+\definecolor{header}{rgb}{0.5,0.3,0.2}
+\definecolor{green}{rgb}{0,0.75,0}
+\definecolor{darkblue}{rgb}{.2,0.2,0.8}
+\definecolor{darkgreen}{rgb}{0.2,0.8,0}
+\definecolor{lightOrange}{RGB}{255,229,204}
+\definecolor{wheat}{RGB}{252,247,234}
+\definecolor{lightRedPython}{RGB}{246,241,241}
+\definecolor{lightOrange}{RGB}{255,229,204}
+\definecolor{wheat}{RGB}{252,247,234}
+\definecolor{lightGreenPython}{RGB}{240,255,240}
+\definecolor{oldLace}{RGB}{253,245,230}
+\definecolor{myWaterMark}{RGB}{253, 253, 250}
+\definecolor{myHyperLinkOrange}{RGB}{224, 139, 27}
+%%%%%%%%%%%%
+
+
+\usepackage{caption}
+\DeclareCaptionFont{darkblue}{\color{darkblue}\bfseries}
+\DeclareCaptionFont{black}{\color{black}}
+\DeclareCaptionFont{lightGreenPython}{\color{lightGreenPython}}
+\DeclareCaptionFont{light-gray}{\color{light-gray}}
+
+\DeclareCaptionFormat{listing}{\colorbox{lightGreenPython},{\parbox{\textwidth}{#1#2#3}}}  %% python file listing format
+\DeclareCaptionFormat{latex}{\colorbox{light-gray}{\parbox{\textwidth}{#1#2#3}}}  %% LaTeX listing format
+\captionsetup[lstlisting]{labelfont=darkblue,textfont=black}
+\captionsetup[lstinputplisting]{format = listing, labelfont=darkblue, textfont = black}
+
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=myHyperLinkOrange,
+			urlcolor=myHyperLinkOrange,
+            anchorcolor=darkblue,
+			citecolor=darkblue,
+			pdftitle={Computational Physics in Python},
+			pdfauthor={Paul A. Nakroshis},
+			pdfkeywords={Computational, Physics, Python, Introductory},
+			pdfstartview={FitV}
+			%pdfpagemode={FullScreen}
+			}
+% choose options for [] as required from the list
+% in the Reference Guide, Sect. 2.2
+%\usepackage[xelatex]{graphicx}  % for XELaTeX
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool (uncomment if using pdfLaTeX)
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+% etc.
+% see the list of further useful packages
+% in the Reference Guide, Sects. 2.3, 3.1-3.3
+\DeclareGraphicsExtensions{.png,.pdf,.jpg,.mps}
+%\usepackage{enumerate}
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%	define style parameters for including python code:
+%	
+\lstset{
+      language=python,
+	  commentstyle = \normalfont\color{Brown},
+      basicstyle=\ttfamily\tiny,
+      captionpos=b,
+      columns=flexible,
+      rulecolor=\color{black},
+	  stringstyle=\normalfont\color{blue},
+	  showstringspaces=false,
+	  backgroundcolor=\color{lightGreenPython},
+	  linewidth = \textwidth
+	} 
+%
+\lstset{
+	language=[LaTeX]{TeX}, 
+	basicstyle=\small\ttfamily,
+	keywordstyle=\color[rgb]{0,0,1},
+    commentstyle=\color[rgb]{0.133,0.545,0.133}, 
+    stringstyle=\color[rgb]{0.627,0.126,0.941},
+    numbersep=5pt,frame=none
+    }
+
+%
+\lstdefinestyle{numbers} {numbers=left, stepnumber=5, numberstyle=\tiny, numbersep=4pt}
+\lstdefinestyle{MyFrame}{backgroundcolor=\color{white},frame=lines}
+
+\lstdefinestyle{myPythonStyle}{
+language=python, 
+basicstyle=\ttfamily\footnotesize,
+commentstyle = \normalfont\color{Brown},
+frame=lines, 
+framerule=0.5pt, 
+rulecolor=\color{RoyalPurple}, 
+breaklines=true
+}
+
+\lstdefinestyle{pythonSnippet}{
+language=python, 
+basicstyle=\ttfamily\footnotesize,
+commentstyle = \normalfont\color{Brown},
+backgroundcolor=\color{wheat}, 
+frame=leftline, 
+framerule=0.5pt, 
+rulecolor=\color{RoyalPurple}, 
+stepnumber=1, 
+numberstyle=\normalsize\color{RawSienna}, 
+numbersep=5pt
+}
+
+\lstdefinestyle{myLaTeXStyle}{
+language=[LaTeX]{tex},
+style=numbers,
+frame=lines,
+backgroundcolor=\color{light-gray}
+}
+
+\lstdefinestyle{latexSnippet}{
+language=[LaTeX]{tex},
+style=numbers,
+frame=none,
+backgroundcolor=\color{light-gray}
+}
+
+
+\newdateformat{UKvardate}{\THEDAY\ \monthname[\THEMONTH], \THEYEAR}
+\newdateformat{UKmonthdate}{\monthname[\THEMONTH]  \THEYEAR}
+
+\SetWatermarkLightness{0.9}
+\SetWatermarkColor{myWaterMark}
+\SetWatermarkFontSize{5cm}
+\SetWatermarkScale{1.5}
+\SetWatermarkText{ \shortstack[c]{Draft\\ \textit{\small \textcolor{myWaterMark}{v0.1}} \hfill \textit{\small \textcolor{myWaterMark}{ \UKvardate\today}}}}
+\SetWatermarkAngle{60}
+\widowpenalty = 100000
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%
+\author{Paul A. Nakroshis}
+\title{\textcolor{Cerulean} {\myTextSize{30}{40}{Introductory Computational \\Physics Using Python}}}
+\subtitle{\UKmonthdate\today}
+\date{}
+\maketitle
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\include{Dedication/dedic}
+\include{Preface/pref}
+\tableofcontents
+
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{part}
+\include{Chapters/introToLatex/introLatex}
+%\include{Chapters/simplePlots/simplePlots}
+%\include{Chapters/extractingData/extractingData}
+\include{Chapters/BasicPython/BasicPython}
+\include{Chapters/Kinematics/Kinematics}
+%\include{Chapters/6SimpleHarmonicMotion/SimpleHarmonicMotion}
+%\include{chapter}
+\appendix
+\include{appendices/guidelinesForReports/guidelines}
+\include{appendices/digitalSubmission/submission}
+\include{appendices/guidelinesForProgramming/programmingGuidelines}
+%\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{../Solutions/solutions}
+\include{References/reference}
+\printindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
+

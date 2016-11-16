@@ -1,0 +1,80 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Kinematics in One and Two Dimensions}{45}{chapter.5}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch-kinematics}{{5}{45}{Kinematics in One and Two Dimensions}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Motion in one dimension: Linear Air Resistance}{45}{section.5.1}}
+\newlabel{sec-1d}{{5.1}{45}{Motion in one dimension: Linear Air Resistance}{section.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Theoretical Picture}{45}{subsection.5.1.1}}
+\newlabel{sec-LinDragTheory}{{5.1.1}{45}{Theoretical Picture}{subsection.5.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Free body diagram for an object released from rest a short distance above the surface of Earth.\relax }}{46}{figure.caption.20}}
+\newlabel{fig-FreeFall}{{5.1}{46}{Free body diagram for an object released from rest a short distance above the surface of Earth.\relax }{figure.caption.20}{}}
+\newlabel{eq-diffeqLinDrag}{{5.1}{46}{Theoretical Picture}{equation.5.1.1}{}}
+\newlabel{eq:VvsT_LinDrag1}{{5.2}{46}{Theoretical Picture}{equation.5.1.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Speed vs time for an object falling in a linear drag regime. Notice that if we define a time constant $\tau = v_t/g$, the object reaches 63\% of its terminal velocity after $\tau $ seconds. After several time constants have elapsed, the object is very close to its terminal velocity.\relax }}{47}{figure.caption.21}}
+\newlabel{fig-LinearDrag}{{5.2}{47}{Speed vs time for an object falling in a linear drag regime. Notice that if we define a time constant $\tau = v_t/g$, the object reaches 63\% of its terminal velocity after $\tau $ seconds. After several time constants have elapsed, the object is very close to its terminal velocity.\relax }{figure.caption.21}{}}
+\newlabel{eq:VvsT_LinDrag2}{{5.3}{47}{Theoretical Picture}{equation.5.1.3}{}}
+\newlabel{eq:terminal_v}{{5.4}{47}{Theoretical Picture}{equation.5.1.4}{}}
+\newlabel{eq:VvsT_LinDrag3}{{5.5}{47}{Theoretical Picture}{equation.5.1.5}{}}
+\newlabel{eq:VvsT_LinDrag4}{{5.6}{47}{Theoretical Picture}{equation.5.1.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Simulation of Linear Drag}{48}{subsection.5.1.2}}
+\newlabel{sec-LinDragSimulation}{{5.1.2}{48}{Simulation of Linear Drag}{subsection.5.1.2}{}}
+\newlabel{eq-diffeqEuler}{{5.7}{48}{Simulation of Linear Drag}{equation.5.1.7}{}}
+\newlabel{code:FreeFallLinearDrag}{{5.1}{49}{This program uses the Euler method to solve for the velocity of a ball falling under the influence of a drag force proportional to the speed of fall. It also plots the analytic solution for comparison purposes}{lstlisting.5.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.1}This program uses the Euler method to solve for the velocity of a ball falling under the influence of a drag force proportional to the speed of fall. It also plots the analytic solution for comparison purposes.}{49}{lstlisting.5.1}}
+\citation{Baamann:2002}
+\newlabel{code:EulerFreeFall}{{5.2}{50}{The contents of the file EulerFreeFall}{lstlisting.5.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.2}The contents of the file EulerFreeFall.}{50}{lstlisting.5.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Speed vs time for a 1.25 cm diameter ball bearing falling through glycerin at room temperature. Note that the time step is clearly too large, since the simulation is clearly not a good fit to the analytic solution.\relax }}{51}{figure.caption.22}}
+\newlabel{fig:glycerin}{{5.3}{51}{Speed vs time for a 1.25 cm diameter ball bearing falling through glycerin at room temperature. Note that the time step is clearly too large, since the simulation is clearly not a good fit to the analytic solution.\relax }{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Simulation of Linear Drag: \textsf  {getopt} package}{51}{subsection.5.1.3}}
+\newlabel{sec-LinDragGetOpt}{{5.1.3}{51}{Simulation of Linear Drag: \textsf {getopt} package}{subsection.5.1.3}{}}
+\newlabel{code:FreeFallGetOpt}{{5.3}{51}{This program uses the Euler method to solve for the velocity of a ball falling under the influence of a drag force proportional to the speed of fall. You may enter any number of different time steps, and the program will run once for each one. The program also uses the getopt package to parse input parameters}{lstlisting.5.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.3}This program uses the Euler method to solve for the velocity of a ball falling under the influence of a drag force proportional to the speed of fall. You may enter any number of different time steps, and the program will run once for each one. The program also uses the getopt package to parse input parameters.}{51}{lstlisting.5.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}Simulation of Linear Drag: \textsf  {argparse} package}{54}{subsection.5.1.4}}
+\newlabel{sec-LinDragArgParse}{{5.1.4}{54}{Simulation of Linear Drag: \textsf {argparse} package}{subsection.5.1.4}{}}
+\newlabel{code:FreeFallArgParse}{{5.4}{54}{This program uses the Euler method to solve for the velocity of a ball falling under the influence of a drag force proportional to the speed of fall. You may enter any number of different time steps, and the program will run once for each one. The program also uses the \textsf {argparse} package to parse input parameters}{lstlisting.5.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.4}This program uses the Euler method to solve for the velocity of a ball falling under the influence of a drag force proportional to the speed of fall. You may enter any number of different time steps, and the program will run once for each one. The program also uses the \textsf  {argparse} package to parse input parameters.}{54}{lstlisting.5.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Speed vs time for a 1.25 cm diameter ball bearing falling through glycerin at room temperature; three different time steps are shown.\relax }}{54}{figure.caption.23}}
+\newlabel{fig:freefallgetopt}{{5.4}{54}{Speed vs time for a 1.25 cm diameter ball bearing falling through glycerin at room temperature; three different time steps are shown.\relax }{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Motion in Two Dimensions}{57}{section.5.2}}
+\newlabel{sec-2d}{{5.2}{57}{Motion in Two Dimensions}{section.5.2}{}}
+\newlabel{eq:drag}{{5.9}{57}{Motion in Two Dimensions}{equation.5.2.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces A sphere moving in two dimensions with air drag.\relax }}{57}{figure.caption.24}}
+\newlabel{fig:2DFreeBody}{{5.5}{57}{A sphere moving in two dimensions with air drag.\relax }{figure.caption.24}{}}
+\newlabel{eq:dragModified}{{5.10}{58}{Motion in Two Dimensions}{equation.5.2.10}{}}
+\@writefile{toc}{\contentsline {section}{Problems}{59}{section*.25}}
+\newlabel{prob2.1}{{5.1}{59}{Problems}{prob.5.1}{}}
+\newlabel{2d}{{5.2}{59}{Problems}{prob.5.2}{}}
+\@setckpt{Chapters/5Kinematics/Kinematics}{
+\setcounter{page}{61}
+\setcounter{equation}{12}
+\setcounter{enumi}{3}
+\setcounter{enumii}{3}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{section}{2}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{5}
+\setcounter{table}{0}
+\setcounter{chapter}{5}
+\setcounter{theorem}{0}
+\setcounter{prob}{2}
+\setcounter{merk}{0}
+\setcounter{lstnumber}{87}
+\setcounter{Item}{47}
+\setcounter{Hfootnote}{4}
+\setcounter{bookmark@seq@number}{54}
+\setcounter{cp@cntr}{0}
+\setcounter{ContinuedFloat}{0}
+\setcounter{pp@next@reset}{0}
+\setcounter{lstlisting}{4}
+\setcounter{section@level}{1}
+}

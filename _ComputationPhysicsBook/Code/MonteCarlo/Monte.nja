@@ -1,0 +1,21 @@
+{
+  "mainFile": "area.py", 
+  "venv": "", 
+  "name": "Monte", 
+  "license": "MIT License", 
+  "url": "", 
+  "pythonPath": "python", 
+  "programParams": "", 
+  "supported-extensions": [
+    ".py", 
+    ".html", 
+    ".jpg", 
+    ".png", 
+    ".ui", 
+    ".css", 
+    ".json", 
+    ".ini"
+  ], 
+  "project-type": "python", 
+  "description": "Various Monte Carlo Techniques"
+}

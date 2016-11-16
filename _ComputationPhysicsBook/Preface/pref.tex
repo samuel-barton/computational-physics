@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%% pref.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample preface
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\preface
+
+%% Please write your preface here
+Since the advent of quantum mechanics in the 1920's, the subject matter of most of undergraduate physics hasn't changed significantly\cite{chonacky,landau-cise}. Students still start with basic Newtonian physics, thermal physics, move on to study electricity, magnetism, and optics, and then take a standard sequence of more advanced courses: Modern Physics, Mechanics, E\&M, Quantum Mechanics, and typically an upper level laboratory. Most physics departments also have added a minimal computing requirement that is not really integrated into the physics curriculum. 
+
+Although the subject matter we teach hasn't changed significantly, there have been many efforts to change the {\em manner} in which we teach. These changes are the result of research how people learn, and in large part, have roots in constructivist theories of learning. The upshot of this is that we now know that as human beings, we carry about mental models of how we {\em think} the world works. Many of these ideas are actually false, and until we confront these misconceptions, we are doomed to hold onto them. Hence, open---ended hands-on learning activities (like non-cookbook laboratory experiments) are excellent tools to facilitate real learning when carefully designed to force students to confront common misconceptions. 
+
+Along with changes brought by physics education research, another tool in that is finally starting to take hold in several physics departments (perhaps most noteably at Oregon State University, under the direction of Rubin Landau\cite{landau-cise, landau-firstcourse, landau-computationalphysics}), is the clear integration of computers as tools for learning about physics. Slide rules were abandoned in the late 1970's with the advent of pocket calculators, and scientists have been using computers for many decades now, but because computing power has been growing rapidly (at a pace slightly below that predicted by Moore's Law), a common modern laptop computer has the computing power that dwarfs that of mainframe computers of the past. 
+
+I believe that as physicists, we have not been coming close to using computers effectively in the college classroom, and we should be taking advantage of them as learning tools. Computers provide us with a multifaceted tool that is extremely useful. 
+
+First, programs such as Mathematica or Maple, provide, at minimum, a toolset that makes graphing calculators appear as the slide rules of yesteryear, and at their highest levels provide a full-fledged computing envronment. Once one learns even a small piece of such programs, tables of integrals become obsolete, and whole new easily utilized capabilities become easily accessible. We should be familiarizing physics students with these tools so that they may use them throughout their careers. 
+
+Second, computers have become indispensable tools for the simulation of complex physical systems that do not admit analytic solution. One does not need to look far to see examples of physical systems that have non-analytic solutions. In mechanics, the three body problem is a famous example; in the study of granular materials, a simple ball bouncing on a vibrating plate is a classic example of chaotic motion. 
+
+There are many more examples, but the relevant point is this: even though we have the computing power to simulate many interesting physical systems that are accessible to undergraduate physics majors, we persist in teaching physics majors as if the only interesting problems are those with closed-form analytic solutions. Of course, I am not advocating that we cease studying the classic analytically soluble problems, but rather, we shouldn't constrain our curriculum to only these problems. 
+
+This book is an attempt to help change this paradigm. The goal of this text is to provide a true \textit{introductory} text on computational physics that provides students with sufficient tools to be able to simulate interesting physical systems. Because this is an introductory course taken by all our physics majors (and even our universitiy's chemistry program requires computational physics), I want students to learn several tools that will be useful throughout their career.
+
+First, since composing research papers is important for scientists, students in my course work on simulations and write up their results using \LaTeX\, the defacto typesetting program for physicists and mathematicians. The students' reports receive feedback on the physics content, code, and the quality of their written reports---this course is their first introduction to the genre of scientific journal writing. This text starts, therefore, with a brief introdcution to \LaTeX\ and I provide students with a template file for writing up their reports. \LaTeX\ is a huge package, and my intent is to get them using it at a basic level, not to make it the focus of the course. 
+
+Second, I want students to enjoy programming \textit{and} to walk away from this course with a toolbelt of skills that they can take to other laboratory  and even theoretical classes. Thus, before diving into the details of programming, I begin with a few exercises that get their feet wet reading and plotting data files, skills that are immediately useful in their other coursework, and, of course, vital to this course. 
+
+Python is ideally suited to such work\cite{oliphant-cise, perez}; it now has a mature interactive shell (IPython) similar to Matlab and Mathematica, and it can be used in a purely procedural fashion. At a more advanced level, one can use Python as a fully object-oriented manner similar to Java or C++, though I do not emphasize the object oriented features in this course.
+
+My assumptions are that students have used a computer running either the Mac, Windows, or Linux operating systems, and have basic familiarity with creating folders and files, and have installed Python 2.7 along with SciPy, and MatplotLib, all of which are available for free for any of the three platforms. In addition, I require my students to gain familiarity with \LaTeX\ and thus, all students need to have a functioning \LaTeX\ distribution. It is assumed that the faculty member teaching using this text already has such familiarity and can assist students with the setup of their laptops. When I first began teachin this course, most students did not have their own laptops, and I needed a university computer lab to teach in; nowadays, the situation is reversed, and most students have either a PC or a Mac. Nonetheless, I find Linux to be a far better environment to program in, and I strongly urge all students to run either Ubuntu Linux or Linux Mint. Getting all students on the same page with a functioning Linux OS typically takes the entire first day, during which I show students how to install programs, use the bash shell, and generally work their way around the Linux OS. 
+
+All of my development for this book has occurred on a 2011 iMac with 16GB ram, running Mac OS X and running Linux Mint 14 as a virtual machine in VMWare.  All python code used in this book should work equally well on Windows or Linux. 
+
+
+
+
+%% Please "sign" your preface
+\vspace{1cm}
+\begin{flushright}\noindent
+Paul A. Nakroshis \hfill Portland, Maine\\
+\hfill June 2013 \\
+\end{flushright}
+
+

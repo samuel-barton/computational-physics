@@ -1,0 +1,21 @@
+\chapter{Guidelines for Reports}
+\label{app:guidelines} % Always give a unique label
+
+\section{General Overview}\label{sec:GeneralOverview}
+
+The heart of this class is learning to use computers as tools to (a) solve problems and (b) simulate physical systems (typically ones that are too difficult to solve analytically). 
+
+When we start becoming familiar with python, we will have some shorter assignments that are geared toward solving some simple problem (say reading an inconveniently formatted data file and re-writing it in a form that graphing programs can understand); for these reports, I'll assume you'll do a sensible writeup that address the main concerns outlined in the statement of the problem. Keep in mind, however, that you should still follow the digital submission guidelines outlined in Appendix~\ref{app:submission}. 
+
+For the simulations, I'll want a formal report, and the rest of this appendix will address the content and style requirements for a formal report. 
+
+\section{Formal Reports}\label{sec:formal}
+\begin{enumerate}
+\item{Introduction:}  The introduction should give an overview of the problem and an indication of where it fits into the subject of physics.
+\item{Physics \& Numerical Method:} Describe the background physics of the problem, and detail the algorithm that is used to solve the problem. This section should also list relevant snippets of your code to show how it is implemented.  (A full listing of your code should always be attached as the last section of your report.)
+\item{Verification:} Tell what you did to verify that the program gives correct results; this typically involves showing that your code gives reasonable results for simple cases where an analytic solution is known or obvious.  Generally speaking there should be more than one test used to verify program integrity. 
+\item{Results:} Present the results of running the program to demonstrate the behavior of the system under different circumstances. Results might be presented in graphical form or as tables, as appropriate. Be sure that results that are presented are labeled properly, so that the reader can figure out what has been calculated and what is being displayed. Make sure that all figures and tables should have descriptive captions.
+\item{Conclusion:} Present a discussion of the physical behavior of the system based on your simulations and answer any special questions posed in the assignment.
+\item{Code:} Always provide a full listing of your code at the end of the paper. In LaTeX, there is an excellent package called listings that does an wonderful job of formatting code.
+ \end{enumerate}
+

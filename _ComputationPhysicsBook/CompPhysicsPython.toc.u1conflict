@@ -1,0 +1,83 @@
+\contentsline {chapter}{\numberline {1}Brief introduction to \LaTeX \ }{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Basic idea of \LaTeX \ }{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}A simple \LaTeX \ document}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}\LaTeX \ editor recommendations}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}\LaTeX \ only editors}{4}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}\LaTeX \ and Python editors}{4}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}How to include mathematics into \LaTeX \ }{5}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Inline equations}{5}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Centered and un-numbered equations}{5}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Subscripts \& superscripts}{5}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Numbered equations}{6}{subsection.1.4.4}
+\contentsline {section}{\numberline {1.5}How to include Python code in your \LaTeX \ document}{6}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Short code snippet}{6}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Extended Section of Code}{7}{subsection.1.5.2}
+\contentsline {section}{\numberline {1.6}Final Words on \LaTeX \ }{9}{section.1.6}
+\contentsline {chapter}{\numberline {2}Python Basics}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}General Overview; Ways of interacting with Python}{13}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Terminal--based Python}{14}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}ipython qtconsole --pylab=inline }{15}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}ipython notebook --pylab=inline }{17}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Integrated Development Environments }{19}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}Using Python}{19}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Python as an Interactive Calculator}{19}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Higher Mathematics: the \texttt {math} library}{20}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Python libraries: Loading and getting help}{21}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Four methods of loading libraries}{22}{subsection.2.2.4}
+\contentsline {subsubsection}{Other Libraries}{24}{section*.14}
+\contentsline {subsubsection}{Alternate Help via pydoc}{24}{section*.15}
+\contentsline {section}{\numberline {2.3}Variable types and data structures in Python}{24}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Assignment Statements; integers, floating points, \& strings}{24}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Variable Naming}{25}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Boolean Integers}{25}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Complex Numbers }{26}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Strings}{26}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Lists}{27}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.7}List Comprehensions}{28}{subsection.2.3.7}
+\contentsline {subsection}{\numberline {2.3.8}Tuples}{30}{subsection.2.3.8}
+\contentsline {subsection}{\numberline {2.3.9}Dictionaries}{30}{subsection.2.3.9}
+\contentsline {section}{\numberline {2.4}Flow Control: if, while, for}{31}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}if Statements}{31}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}while Statements}{31}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}for Statements}{32}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Other Methods of iterating in Python}{32}{section.2.5}
+\contentsline {section}{\numberline {2.6}Numpy}{34}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Numpy vectors}{34}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Refering to subsets of numpy vectors: slicing}{36}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Other ways to create vectors}{36}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Random number generation}{37}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.5}2d arrays in numpy}{38}{subsection.2.6.5}
+\contentsline {subsection}{\numberline {2.6.6}Slicing and Masking to select sub-arrays}{38}{subsection.2.6.6}
+\contentsline {subsection}{\numberline {2.6.7}3d surface plots}{40}{subsection.2.6.7}
+\contentsline {subsection}{\numberline {2.6.8}Reading and writing data files}{42}{subsection.2.6.8}
+\contentsline {section}{\numberline {2.7}First Python Program}{42}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Discussion of Code}{43}{subsection.2.7.1}
+\contentsline {section}{\numberline {2.8}Second Python Program}{45}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Running the script}{47}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Discussion of the Script}{47}{subsection.2.8.2}
+\contentsline {section}{\numberline {2.9}Saving Functions as Modules}{51}{section.2.9}
+\contentsline {subsection}{\numberline {2.9.1}A further change; all looping done using numpy}{53}{subsection.2.9.1}
+\contentsline {section}{\numberline {2.10}General Guidelines for Programming}{54}{section.2.10}
+\contentsline {section}{\numberline {2.11}First two Python programs in the iPython Notebook}{55}{section.2.11}
+\contentsline {section}{\numberline {2.12}Python References}{56}{section.2.12}
+\contentsline {section}{Problems}{57}{section*.22}
+\contentsline {chapter}{\numberline {3}Kinematics in One and Two Dimensions}{63}{chapter.3}
+\contentsline {section}{\numberline {3.1}Motion in one dimension: Linear Air Resistance}{63}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Theoretical Picture}{63}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Simulation of Linear Drag}{65}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Simulation of Linear Drag: \textsf {argparse} package}{69}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Projectile Motion in Two Dimensions}{74}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}The Euler--Cromer Method}{76}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Planetary Motion in Two Dimensions}{77}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Euler-Cromer equations for 2 body gravitating system}{78}{subsection.3.3.1}
+\contentsline {subsubsection}{Euler-Cromer equations in vector form}{78}{section*.34}
+\contentsline {subsection}{\numberline {3.3.2}Natural units for the gravitating system}{79}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Creating our simulation}{80}{subsection.3.3.3}
+\contentsline {section}{Problems}{81}{section*.35}
+\contentsline {chapter}{\numberline {A}Guidelines for Reports}{83}{appendix.A}
+\contentsline {section}{\numberline {A.1}General Overview}{83}{section.A.1}
+\contentsline {section}{\numberline {A.2}Formal Reports}{83}{section.A.2}
+\contentsline {chapter}{\numberline {B}Digital Submission of Reports}{85}{appendix.B}
+\contentsline {section}{\numberline {B.1}Folder Structure}{85}{section.B.1}
+\contentsline {chapter}{\numberline {C}General Guidelines for Programming}{87}{appendix.C}
+\contentsline {chapter}{References}{89}{appendix*.38}
